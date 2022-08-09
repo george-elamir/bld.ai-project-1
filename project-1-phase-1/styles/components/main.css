@@ -1,0 +1,72 @@
+.main-top {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.top-image {
+  width: 100vw;
+}
+.top-image img {
+  width: 100%;
+}
+.top-card {
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+.top-card h2 {
+  margin: 0 0.8rem;
+  font-size: 2.4rem;
+}
+.top-card p {
+  font-size: 1.6rem;
+}
+
+@media only screen and (min-width: 75em) {
+  .top-card {
+    left: 7rem;
+    top: 6.5rem;
+    max-width: 44rem;
+  }
+}
+@media only screen and (min-width: 44em) and (max-width: 75em) {
+  .top-card {
+    width: 34rem;
+    left: 5rem;
+    top: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 44em) {
+  .top-card {
+    position: absolute;
+    padding: 2.5rem;
+  }
+  .top-card h2 {
+    font-size: 3.2rem;
+  }
+  .top-card p {
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .main-top {
+  }
+}
+/*
+
+  background-image: url("../../media/header\ image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: local;
+  background-position: center;
+
+  
+    height: 70vh;
+    background-image: url("../../media/header\ image.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+  */
