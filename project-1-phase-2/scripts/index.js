@@ -42,5 +42,45 @@ window.onload = async function (e) {
     cardsContainer.appendChild(cardDiv);
     cards.push(cardDiv);
   });
-  console.log(cards);
+  const searchbar = document.getElementById("searchbar");
+  searchbar.addEventListener("input", (e) => {
+    const searchRegex = new RegExp(e.target.value, "i");
+
+    cardsContainer.textContent = "";
+    const filteredCourses = courses.filter((elem) => {
+      return searchRegex.test(elem.course_title);
+    });
+    //console.log(filteredCourses);
+    filteredCourses.forEach((element) => {
+      const cardDiv = document.createElement("div");
+      cardDiv.classList.add("course-card");
+
+      const cardImg = document.createElement("img");
+      cardImg.setAttribute("src", element.image);
+
+      const cardTitle = document.createElement("h4");
+      const titleText = document.createTextNode(element.course_title);
+      cardTitle.classList.add("card-title");
+      cardTitle.appendChild(titleText);
+
+      const cardAuthor = document.createElement("p");
+      const authorText = document.createTextNode(element.author);
+      cardAuthor.classList.add("card-author");
+      cardAuthor.appendChild(authorText);
+
+      const cardPrice = document.createElement("div");
+      const priceText = document.createTextNode(element.price);
+      cardPrice.classList.add("card-price");
+      cardPrice.classList.add("font-bold");
+      cardPrice.appendChild(priceText);
+
+      cardDiv.appendChild(cardImg);
+      cardDiv.appendChild(cardTitle);
+      cardDiv.appendChild(cardAuthor);
+      cardDiv.appendChild(cardPrice);
+
+      cardsContainer.appendChild(cardDiv);
+      cards.push(cardDiv);
+    });
+  });
 };
